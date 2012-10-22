@@ -1,3 +1,4 @@
+require 'redis'
 
 module ActiveSupport
   module Cache
