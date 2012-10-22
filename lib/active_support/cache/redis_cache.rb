@@ -4,6 +4,8 @@ require 'active_support/cache'
 module ActiveSupport
   module Cache
     class RedisCache < Store
+      
+      attr_accessor :client 
 
       def initialize options = {}
         @client = Redis.new(options)
