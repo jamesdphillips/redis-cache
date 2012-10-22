@@ -19,7 +19,7 @@ module ActiveSupport
       end
 
       def read_entry key, opts = {}
-        @client.send :get, key
+        entry = @client.send :get, key
         entry.is_a?(ActiveSupport::Cache::Entry) ? entry : ActiveSupport::Cache::Entry.new(entry) if entry
       rescue Errno::ECONNREFUSED => e
         nil
