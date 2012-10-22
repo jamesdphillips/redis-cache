@@ -1,1 +1,1 @@
-require 'active_support/redis-cache'
+require 'active_support/cache/redis_cache'

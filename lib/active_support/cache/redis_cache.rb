@@ -1,11 +1,12 @@
 require 'redis'
+require 'active_support/cache'
 
 module ActiveSupport
   module Cache
     class RedisCache < Store
 
       def initialize params
-        @client = Redis.new *params
+        @client = Redis.new params
       end
 
       protected
