@@ -5,8 +5,9 @@ module ActiveSupport
   module Cache
     class RedisCache < Store
 
-      def initialize params
-        @client = Redis.new params
+      def initialize options = {}
+        @client = Redis.new(options)
+        @options = options.dup
       end
 
       protected
